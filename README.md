@@ -3,6 +3,7 @@
 # 🎓 KBS - Adaptive Competency Testing System (ACTS)
 
 **HỆ THỐNG KIỂM TRA TRẮC NGHIỆM THÍCH ỨNG THEO NĂNG LỰC**
+**Môn Python và Cấu trúc dữ liệu và giải thuật**
 
 [![Python](https://img.shields.io/badge/Python-3.11-blue?logo=python)](https://python.org)
 [![FastAPI](https://img.shields.io/badge/FastAPI-0.111-green?logo=fastapi)](https://fastapi.tiangolo.com)
