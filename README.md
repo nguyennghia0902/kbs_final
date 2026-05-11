@@ -18,8 +18,6 @@
 ---
 
 ## 👥 Thông tin nhóm thực hiện
-=======
-## 👥 Thông tin nhóm thực hiện
 
 Dự án là sản phẩm đồ án của **Học viên cao học K36**, Ngành **Khoa học Máy tính** - **Trường Đại học Sư phạm TP.HCM**.
 
