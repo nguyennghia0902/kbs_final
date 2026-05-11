@@ -1,0 +1,130 @@
+services:
+
+  postgres:
+    image: postgres:15-alpine
+    container_name: kbs_postgres
+    restart: unless-stopped
+    environment:
+      POSTGRES_USER: kbs_user
+      POSTGRES_PASSWORD: kbs_password
+      POSTGRES_DB: kbs_adaptive_exam
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U kbs_user -d kbs_adaptive_exam"]
+      interval: 5s
+      timeout: 5s
+      retries: 15
+      start_period: 10s
+    networks:
+      - kbs_net
+
+  neo4j:
+    image: neo4j:5.18-community
+    container_name: kbs_neo4j
+    restart: unless-stopped
+    environment:
+      NEO4J_AUTH: neo4j/12345678
+      NEO4J_PLUGINS: '["apoc"]'
+      NEO4J_dbms_security_procedures_unrestricted: apoc.*
+      NEO4J_server_memory_heap_initial__size: 256m
+      NEO4J_server_memory_heap_max__size: 512m
+    ports:
+      - "7474:7474"
+      - "7687:7687"
+    volumes:
+      - neo4j_data:/data
+      - neo4j_logs:/logs
+    healthcheck:
+      test: ["CMD-SHELL", "wget -q --spider http://localhost:7474 || exit 1"]
+      interval: 10s
+      timeout: 10s
+      retries: 20
+      start_period: 30s
+    networks:
+      - kbs_net
+
+  init:
+    build:
+      context: ./backend
+      dockerfile: Dockerfile.init
+    container_name: kbs_init
+    restart: "no"
+    depends_on:
+      postgres:
+        condition: service_healthy
+      neo4j:
+        condition: service_healthy
+    environment:
+      GROQ_API_KEY: ${GROQ_API_KEY}
+      PG_HOST: postgres
+      PG_PORT: 5432
+      PG_DB: kbs_adaptive_exam
+      PG_USER: kbs_user
+      PG_PASSWORD: kbs_password
+      NEO4J_URI: bolt://neo4j:7687
+      NEO4J_USER: neo4j
+      NEO4J_PASSWORD: "12345678"
+      EXCEL_FILE: /app/data/questions_week3_fixed_complete.xlsx
+      RULES_CSV: /app/rules.csv
+    volumes:
+      - ./data:/app/data:ro
+    networks:
+      - kbs_net
+
+  api:
+    build:
+      context: ./backend
+      dockerfile: Dockerfile.api
+    container_name: kbs_api
+    restart: unless-stopped
+    depends_on:
+      init:
+        condition: service_completed_successfully
+    ports:
+      - "8000:8000"
+    environment:
+      GROQ_API_KEY: ${GROQ_API_KEY}
+      PG_HOST: postgres
+      PG_PORT: 5432
+      PG_DB: kbs_adaptive_exam
+      PG_USER: kbs_user
+      PG_PASSWORD: kbs_password
+      NEO4J_URI: bolt://neo4j:7687
+      NEO4J_USER: neo4j
+      NEO4J_PASSWORD: "12345678"
+    healthcheck:
+      test: ["CMD-SHELL", "wget -q --spider http://localhost:8000/ || exit 1"]
+      interval: 10s
+      timeout: 5s
+      retries: 12
+      start_period: 15s
+    networks:
+      - kbs_net
+
+  streamlit:
+    build:
+      context: ./streamlit_app
+      dockerfile: Dockerfile
+    container_name: kbs_streamlit
+    restart: unless-stopped
+    depends_on:
+      api:
+        condition: service_started
+    ports:
+      - "8501:8501"
+    environment:
+      API_BASE_URL: http://api:8000
+    networks:
+      - kbs_net
+
+volumes:
+  postgres_data:
+  neo4j_data:
+  neo4j_logs:
+
+networks:
+  kbs_net:
+    driver: bridge

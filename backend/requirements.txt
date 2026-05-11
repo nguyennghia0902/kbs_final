@@ -1,0 +1,19 @@
+# Web framework
+fastapi
+uvicorn[standard]
+
+# Database
+psycopg2-binary
+neo4j
+
+# Data processing
+pandas
+openpyxl
+numpy
+
+# LLM Client
+groq
+
+# Utilities
+pydantic
+python-dotenv
