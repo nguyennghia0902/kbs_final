@@ -19,31 +19,6 @@
 
 ---
 
-## 👥 Thông tin nhóm thực hiện
-
-Dự án là sản phẩm đồ án của **Học viên cao học K36**, Ngành **Khoa học Máy tính** - **Trường Đại học Sư phạm TP.HCM**.
-
-### Thành viên
-- **Nguyễn Thị Mỹ Hạnh** – `KHMT836007`
-- **Bùi Nguyên Nghĩa** – `KHMT836021`
-- **Nguyễn Đức Thành** – `KHMT836031`
-
-### Giảng viên hướng dẫn
-- **PGS. TS. Nguyễn Đình Hiển**
-
-## Stack
-| Thành phần | Công nghệ |
-|---|---|
-| UI | Streamlit (`localhost:8501`) |
-| API | FastAPI + Uvicorn (`localhost:8000`) |
-| Graph DB | Neo4j (`localhost:7474`) |
-| DBeaver | PostgreSQL (`localhost:5432`) |
-| LLM Feedback | Groq API (llama-3.1-8b-instant) |
-
----
-
-## 🚀 Setup nhanh (2 bước)
->>>>>>> 073d60bc682b2c7e7659b01554e95f0a7992e880
 
 Dự án là sản phẩm đồ án của **nhóm học viên cao học K36**, Ngành **Khoa học Máy tính** — **Trường Đại học Sư phạm TP.HCM**
 
