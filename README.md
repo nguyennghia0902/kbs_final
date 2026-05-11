@@ -25,7 +25,7 @@ Dự án là sản phẩm đồ án của **Học viên cao học K36**, Ngành 
 
 ---
 
-## 🚀 Setup nhanh (3 bước)
+## 🚀 Setup nhanh (2 bước)
 
 ### Bước 1 – Lấy Groq API Key (miễn phí)
 1. Truy cập **https://console.groq.com/keys**
