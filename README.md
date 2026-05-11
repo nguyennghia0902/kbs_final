@@ -2,6 +2,7 @@
 
 # 🎓 KBS - Adaptive Competency Testing System (ACTS)
 
+
 **HỆ THỐNG KIỂM TRA TRẮC NGHIỆM THÍCH ỨNG THEO NĂNG LỰC**
 
 **Môn Python và Cấu trúc dữ liệu và giải thuật**
@@ -18,8 +19,6 @@
 
 ---
 
-<<<<<<< HEAD
-=======
 ## 👥 Thông tin nhóm thực hiện
 
 Dự án là sản phẩm đồ án của **Học viên cao học K36**, Ngành **Khoa học Máy tính** - **Trường Đại học Sư phạm TP.HCM**.
@@ -44,7 +43,6 @@ Dự án là sản phẩm đồ án của **Học viên cao học K36**, Ngành 
 ---
 
 ## 🚀 Setup nhanh (2 bước)
->>>>>>> a9261ac98f16bc2d96a8b9535a7752a89340e969
 >>>>>>> 073d60bc682b2c7e7659b01554e95f0a7992e880
 
 Dự án là sản phẩm đồ án của **nhóm học viên cao học K36**, Ngành **Khoa học Máy tính** — **Trường Đại học Sư phạm TP.HCM**
