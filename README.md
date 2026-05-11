@@ -2,7 +2,6 @@
 
 # 🎓 KBS - Adaptive Competency Testing System (ACTS)
 
-
 **HỆ THỐNG KIỂM TRA TRẮC NGHIỆM THÍCH ỨNG THEO NĂNG LỰC**
 
 [![Python](https://img.shields.io/badge/Python-3.11-blue?logo=python)](https://python.org)
@@ -17,6 +16,8 @@
 
 ---
 
+<<<<<<< HEAD
+=======
 ## 👥 Thông tin nhóm thực hiện
 
 Dự án là sản phẩm đồ án của **Học viên cao học K36**, Ngành **Khoa học Máy tính** - **Trường Đại học Sư phạm TP.HCM**.
@@ -42,6 +43,7 @@ Dự án là sản phẩm đồ án của **Học viên cao học K36**, Ngành 
 
 ## 🚀 Setup nhanh (2 bước)
 >>>>>>> a9261ac98f16bc2d96a8b9535a7752a89340e969
+>>>>>>> 073d60bc682b2c7e7659b01554e95f0a7992e880
 
 Dự án là sản phẩm đồ án của **nhóm học viên cao học K36**, Ngành **Khoa học Máy tính** — **Trường Đại học Sư phạm TP.HCM**
 
@@ -320,7 +322,6 @@ model = "llama-3.3-70b-versatile"
 
 ---
 
-<<<<<<< HEAD
 ## 10. Giấy phép
 
 Dự án được phát triển cho mục đích học thuật — Đồ án mon học cao học Khoa học Máy tính, Trường Đại học Sư phạm TP.HCM.
@@ -332,10 +333,3 @@ Dự án được phát triển cho mục đích học thuật — Đồ án mon
 Made with ❤️ by **KBS Team 3 — K36KHMT.NC HCMUE**
 
 </div>
-=======
-## 🛑 Dừng hệ thống
-```bash
-docker-compose down          # Dừng, giữ data
-docker-compose down -v       # Dừng + xóa data (reset hoàn toàn)
-```
->>>>>>> a9261ac98f16bc2d96a8b9535a7752a89340e969
