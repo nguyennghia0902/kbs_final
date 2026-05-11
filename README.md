@@ -2,6 +2,18 @@
 
 Hệ thống sinh đề thi trắc nghiệm & chấm điểm tự động theo năng lực (CAT).
 
+## 👥 Thông tin nhóm thực hiện
+
+Dự án là sản phẩm đồ án của **Học viên cao học K36**, Ngành **Khoa học Máy tính** - **Trường Đại học Sư phạm TP.HCM**.
+
+### Thành viên
+- **Nguyễn Thị Mỹ Hạnh** – `KHMT836007`
+- **Bùi Nguyên Nghĩa** – `KHMT836021`
+- **Nguyễn Đức Thành** – `KHMT836031`
+
+### Giảng viên hướng dẫn
+- **PGS. TS. Nguyễn Đình Hiển**
+
 ## Stack
 | Thành phần | Công nghệ |
 |---|---|
